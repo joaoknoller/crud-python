@@ -1,0 +1,179 @@
+<!doctype html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>FastAPI • Home</title>
+    <meta name="description" content="Home da aplicação FastAPI" />
+    <meta name="color-scheme" content="light dark" />
+    <style>
+        :root {
+            --bg: #ffffff;
+            --fg: #0b0b0f;
+            --muted: #6b7280;
+            --card: #f8fafc;
+            --border: #e5e7eb;
+            --accent: #2563eb;
+            --accent-contrast: #ffffff;
+            --radius: 16px;
+            --shadow: 0 10px 30px rgba(0, 0, 0, .08);
+        }
+
+        @media (prefers-color-scheme: dark) {
+            :root {
+                --bg: #0b0b0f;
+                --fg: #e5e7eb;
+                --muted: #9ca3af;
+                --card: #111318;
+                --border: #20232a;
+                --accent: #60a5fa;
+                --accent-contrast: #0b0b0f;
+                --shadow: 0 12px 40px rgba(0, 0, 0, .45);
+            }
+        }
+
+        * {
+            box-sizing: border-box;
+        }
+
+        html {
+            font-size: 16px;
+        }
+
+        body {
+            margin: 0;
+            min-height: 100dvh;
+            display: grid;
+            place-items: center;
+            background: radial-gradient(1200px 800px at 80% -10%, color-mix(in oklab, var(--accent) 12%, transparent), transparent), var(--bg);
+            color: var(--fg);
+            font-family: ui-sans-serif, system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", "Apple Color Emoji", "Segoe UI Emoji";
+            line-height: 1.6;
+            -webkit-font-smoothing: antialiased;
+            text-rendering: optimizeLegibility;
+        }
+
+        .container {
+            width: min(92vw, 820px);
+            background: var(--card);
+            border: 1px solid var(--border);
+            border-radius: var(--radius);
+            box-shadow: var(--shadow);
+            padding: clamp(1.25rem, 1rem + 2vw, 2.25rem);
+        }
+
+        .brand {
+            display: flex;
+            align-items: center;
+            gap: .75rem;
+            margin-bottom: 1.25rem;
+        }
+
+        .logo {
+            width: 40px;
+            height: 40px;
+            border-radius: 12px;
+            display: grid;
+            place-items: center;
+            background: var(--accent);
+            color: var(--accent-contrast);
+            font-weight: 700;
+            letter-spacing: .5px;
+        }
+
+        h1 {
+            margin: 0;
+            font-size: clamp(1.35rem, 1.1rem + 1.2vw, 1.9rem);
+            line-height: 1.2;
+        }
+
+        p.lead {
+            margin: .25rem 0 1.25rem;
+            color: var(--muted);
+            font-size: clamp(.95rem, .9rem + .2vw, 1.05rem);
+        }
+
+        .card {
+            border: 1px solid var(--border);
+            border-radius: calc(var(--radius) - 4px);
+            padding: 1rem;
+            background: color-mix(in oklab, var(--card) 92%, var(--bg));
+        }
+
+        .cta {
+            display: flex;
+            gap: .75rem;
+            flex-wrap: wrap;
+            margin-top: 1rem;
+        }
+
+        a.button {
+            appearance: none;
+            border: 1px solid var(--border);
+            background: var(--bg);
+            padding: .7rem 1rem;
+            border-radius: 999px;
+            text-decoration: none;
+            color: var(--fg);
+            font-weight: 600;
+            transition: transform .15s ease, background .15s ease, border-color .15s ease;
+            outline: none;
+        }
+
+        a.button.primary {
+            background: var(--accent);
+            color: var(--accent-contrast);
+            border-color: color-mix(in oklab, var(--accent) 60%, var(--border));
+        }
+
+        a.button:hover {
+            transform: translateY(-1px);
+        }
+
+        a.button:active {
+            transform: translateY(0);
+        }
+
+        a.button:focus-visible {
+            box-shadow: 0 0 0 3px color-mix(in oklab, var(--accent) 30%, transparent);
+        }
+
+        .meta {
+            margin-top: 1rem;
+            font-size: .9rem;
+            color: var(--muted);
+        }
+
+        @media (prefers-reduced-motion: reduce) {
+            * {
+                animation: none !important;
+                transition: none !important;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <main class="container" role="main">
+        <div class="brand" aria-label="Identidade do aplicativo">
+            <div class="logo" aria-hidden="true">JK</div>
+            <div>
+                <h1>Welcome to my FastAPI</h1>
+                <p class="lead">Project for studies and practicing. {FastAPI, SQLModel, SQLite}</p>
+            </div>
+        </div>
+
+        <section class="card">
+            <p>Documentation is available at <code>/docs</code>. Source code can be found at GitHub.
+            </p>
+            <div class="cta">
+                <a class="button primary" href="/docs">Open Docs (Swagger)</a>
+                <a class="button" href="https://github.com/joaoknoller/crud-python" target="_blank"
+                    rel="noopener noreferrer">See at GitHub</a>
+            </div>
+        </section>
+    </main>
+</body>
+
+</html>

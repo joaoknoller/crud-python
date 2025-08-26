@@ -8,7 +8,12 @@ class User(SQLModel, table=True):
     username: str
     age: Optional[int] = None
 
-class UserRequest(SQLModel):
+class UserCreate(SQLModel):
     name: str
     username: str
+    age: Optional[int] = None
+
+class UserPatch(SQLModel):
+    name: Optional[str] = None
+    username: Optional[str] = None
     age: Optional[int] = None
