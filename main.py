@@ -27,7 +27,6 @@ app = FastAPI(
         "url": "https://github.com/joaoknoller",
         "email": "joaofelipeknollermarques@gmail.com"
     },
-    docs_url="/docs",
     lifespan=lifespan
     )
 
